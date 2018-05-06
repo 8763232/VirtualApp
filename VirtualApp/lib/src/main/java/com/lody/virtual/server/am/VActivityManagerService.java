@@ -113,9 +113,8 @@ public class VActivityManagerService implements IActivityManager {
         PackageManager pm = context.getPackageManager();
         PackageInfo packageInfo = null;
         try {
-            packageInfo = pm.getPackageInfo(context.getPackageName(),
-                    PackageManager.GET_ACTIVITIES | PackageManager.GET_PROVIDERS | PackageManager.GET_META_DATA);
-        } catch (PackageManager.NameNotFoundException e) {
+            packageInfo = pm.getPackageInfo(context.getPackageName(),PackageManager.GET_META_DATA);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
